@@ -4,8 +4,8 @@ import * as PubSub from '../src';
 import * as Kafka from 'node-rdkafka';
 import {v4 as uuidv4} from 'uuid';
 
-let Impl = PubSub.Impl;
-let KafkaImpl = PubSub.Impl.Kafka;
+const Impl = PubSub.Impl;
+const KafkaImpl = PubSub.Impl.Kafka;
 
 type QueueId = string & 'Queue';
 @Serializable()

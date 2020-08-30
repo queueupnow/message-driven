@@ -6,7 +6,7 @@ import {
   Deferred,
   SynchronousMessage,
   SynchronousProducer as Producer,
-  SynchronousConsumer as Consumer
+  SynchronousConsumer as Consumer,
 } from '../../SynchronousService';
 import * as Kafka from 'node-rdkafka';
 
@@ -16,8 +16,7 @@ export abstract class SynchronousProducer<
   T,
   E extends Entity<T>,
   M extends SynchronousMessage<MI, MT, T, E>
-> extends EntityPublisher<MI, M>
-  implements Producer<MI, MT, T, E, M> {
+> extends EntityPublisher<MI, M> implements Producer<MI, MT, T, E, M> {
   private returnMap: Map<string, Deferred<MI, MT, T, E, M>>;
 
   constructor(
@@ -169,8 +168,7 @@ export class SynchronousConsumer<
   T,
   E extends Entity<T>,
   M extends SynchronousMessage<MI, MT, T, E>
-> extends EntityConsumer<MI, M>
-  implements Consumer<MI, MT, T, E, M> {
+> extends EntityConsumer<MI, M> implements Consumer<MI, MT, T, E, M> {
   constructor(
     protected readonly topic: EntityTopic<MI, M>,
     protected readonly consumer: Kafka.KafkaConsumer,
