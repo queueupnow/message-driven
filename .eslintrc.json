@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "./node_modules/gts/",
+    "plugin:mocha/recommended"
+  ],
+  "plugins": [
+    "mocha"
+  ],
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "mocha/no-mocha-arrows": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  }
+}
